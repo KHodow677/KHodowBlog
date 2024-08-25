@@ -1,0 +1,26 @@
+<div class="author">
+  <h1 class="author__heading">Kyle Hodowany</h1>
+  <p class="author__body">Software Engineer and Content Creator</p>
+</div>
+<div class="hero-container">
+  <img src="/img/profile.webp" alt="Profile picture of Kyle Hodowany" class="hero-image">
+</div>
+<div class="articles-container">
+  <section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+        <li>
+          <div class="article-spacer"></div>
+          <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+    <% if (nextPage !== null) { %>
+      <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+  <section>
+</div>
